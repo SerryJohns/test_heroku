@@ -376,6 +376,10 @@ def setup_django_environment(settings_path):
         path = os.path.dirname(os.path.dirname(os.path.abspath("wger/settings.py")))
         settings_file = os.path.basename(os.path.join(path, "wger/settings.py"))
         print("Settings path is:", os.path.join(path, "wger/settings.py"))
+        if os.path.exists(path):
+            print("Settings file exists")
+        else:
+            print("lSettings file does not exist")
     print("Settings file is:", settings_file)
         
 
