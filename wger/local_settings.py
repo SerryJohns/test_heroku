@@ -3,6 +3,8 @@
 
 from wger.settings_global import *
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Use 'DEBUG = True' to get more details for server errors
 DEBUG = os.environ.get("DEBUG") or True
 TEMPLATES[0]['OPTIONS']['debug'] = True
@@ -36,7 +38,7 @@ NOCAPTCHA = True
 # The site's URL (e.g. http://www.my-local-gym.com or http://localhost:8000)
 # This is needed for uploaded files and images (exercise images, etc.) to be
 # properly served.
-SITE_ROOT = os.environ.get("SITE_ROOT", "http://localhost:8000")
+SITE_URL = 'http://localhost:8000'
 
 # Path to uploaded files
 # Absolute filesystem path to the directory that will hold user-uploaded files.

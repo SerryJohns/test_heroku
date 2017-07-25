@@ -367,8 +367,16 @@ def setup_django_environment(settings_path):
         settings_path = get_user_config_path('wger', 'settings.py')
         print('*** No settings given, using {0}'.format(settings_path))
 
+
+    # os.path.exists(os.path.join(BASE_DIR, "wger/local_settings.py"))
+    if os.path.exists(os.path.join(settings_path)):
+        settings_file = os.path.basename(settings_path)
+    else:
+        settings_file = os.path.basename("wger/local_settings.py")
+        
+
     # Find out file path and fine name of settings and setup django
-    settings_file = os.path.basename(settings_path)
+    # settings_file = os.path.basename(settings_path)
     settings_module_name = "".join(settings_file.split('.')[:-1])
     if '.' in settings_module_name:
         print("'.' is not an allowed character in the settings-file")
