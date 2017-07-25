@@ -60,8 +60,3 @@ WGER_SETTINGS['EMAIL_FROM'] = 'wger Workout Manager <wger@example.com>'
 
 # Your twitter handle, if you have one for this instance.
 #WGER_SETTINGS['TWITTER'] = ''
-
-if os.path.exists(os.path.join(BASE_DIR, "wger/local_settings.py")):
-    from .local_settings import *
-else:
-    warnings.warn("local_settings.py not found, using defaults")
